@@ -46,7 +46,7 @@ aws ec2 run-instances \
     --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=ApacheInstance}]" \
     --region us-east-1 \
     --security-group-ids $(aws ec2 describe-security-groups --group-names my-sg-apache --query 'SecurityGroups[*].[GroupId]' --output text) \
-    --user-data file://script_apache.txt  &  > EC2_APACHE.txt 
+    --user-data file://script_apache.sh  &  > EC2_APACHE.txt 
 
 # Crear la segunda instancia EC2 con Node.js
 aws ec2 run-instances \
@@ -56,7 +56,7 @@ aws ec2 run-instances \
     --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=NodeInstance}]" \
     --region us-east-1 \
     --security-group-ids $(aws ec2 describe-security-groups --group-names my-sg-node --query 'SecurityGroups[*].[GroupId]' --output text) \
-    --user-data file://script_node.txt  & > EC2_NODE.txt 
+    --user-data file://script_node.sh  & > EC2_NODE.txt 
 
 # Crear la tercera instancia EC2 con Python
 aws ec2 run-instances \
@@ -66,7 +66,7 @@ aws ec2 run-instances \
     --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=PythonInstance}]" \
     --region us-east-1 \
     --security-group-ids $(aws ec2 describe-security-groups --group-names my-sg-python --query 'SecurityGroups[*].[GroupId]' --output text) \
-    --user-data file://script_python.txt  & > EC2_PYTHON.txt 
+    --user-data file://script_python.sh  & > EC2_PYTHON.txt 
 
 echo "Finalizo la creación de instancias"
 aws ec2 describe-instances --query 'Reservations[].Instances[].[Tags[?Key==`Name`].Value[] | [0], Placement.AvailabilityZone,InstanceType, PublicIpAddress]' --output text

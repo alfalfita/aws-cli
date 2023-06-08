@@ -6,9 +6,9 @@ La intención del presente repo, es **crear servidores en Amazon EC2** para apli
 La estructura del repo es la siguiente:
 
 - [tarea.sh](https://github.com/alfalfita/aws-cli/blob/main/tarea.sh "tarea.sh") Contiene todos los comandos para crear: key-par, security-groups, reglas de entrada del SG, recuperar el ID de AMI de Amazon Linux más reciente mediante el almacén de parámetros de AWS Systems Manager y ejecutar las instancias correspondientes
-- [script_apache.txt](https://github.com/alfalfita/aws-cli/blob/main/script_apache.txt "script_apache.txt") Script que se encarga de instalar las actualizaciones, el servidor apache y levantarlo en el  puerto 80
-- [script_node.txt](https://github.com/alfalfita/aws-cli/blob/main/script_node.txt "script_node.txt") Script que se encarga de instalar las actualizaciones, nodejs y clonar este repo accediendo luego al código de la app para levantarlo con node
-- [script_python.txt](https://github.com/alfalfita/aws-cli/blob/main/script_python.txt "script_python.txt")
+- [script_apache.sh](https://github.com/alfalfita/aws-cli/blob/main/script_apache.sh "script_apache.sh") Script que se encarga de instalar las actualizaciones, el servidor apache y levantarlo en el  puerto 80
+- [script_node.sh](https://github.com/alfalfita/aws-cli/blob/main/script_node.sh "script_node.sh") Script que se encarga de instalar las actualizaciones, nodejs y clonar este repo accediendo luego al código de la app para levantarlo con node
+- [script_python.sh](https://github.com/alfalfita/aws-cli/blob/main/script_python.sh "script_python.sh")
 - [nodejs](https://github.com/alfalfita/aws-cli/tree/main/nodejs "nodejs") Script que se encarga de instalar las actualizaciones, python, pip y flask necesarios la app 
 -- [helloworld.js](https://github.com/alfalfita/aws-cli/blob/main/nodejs/helloworld.js) Contiene el código de la app y escucha en el puerto 3000
 - [python](https://github.com/alfalfita/aws-cli/tree/main/python "python")
