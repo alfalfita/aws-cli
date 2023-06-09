@@ -30,7 +30,7 @@ aws ec2 authorize-security-group-ingress --group-id  $(aws ec2 describe-security
 # Para instancia EC2 con Node.js
 aws ec2 authorize-security-group-ingress --group-id  $(aws ec2 describe-security-groups --group-names my-sg-node --query 'SecurityGroups[*].[GroupId]' --output text) --protocol tcp --port 3000 --cidr 0.0.0.0/0 > SG_NODE_UP.txt 
 # Para instancia EC2 con Python
-aws ec2 authorize-security-group-ingress --group-id  $(aws ec2 describe-security-groups --group-names my-sg-python --query 'SecurityGroups[*].[GroupId]' --output text) --protocol tcp --port 8080 --cidr 0.0.0.0/0 > SG_PYTHON_UP.txt
+aws ec2 authorize-security-group-ingress --group-id  $(aws ec2 describe-security-groups --group-names my-sg-python --query 'SecurityGroups[*].[GroupId]' --output text) --protocol tcp --port 8000 --cidr 0.0.0.0/0 > SG_PYTHON_UP.txt
 
 
 ##Consulta de los ID de AMI de Amazon Linux más recientes mediante el almacén de parámetros de AWS Systems Manager
